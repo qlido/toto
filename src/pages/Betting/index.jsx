@@ -1,12 +1,24 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import * as S from "./style"
 import BettingInfo from "../../components/BettingInfo";
 import {realtimeDB} from "../../utils/firebase/init";
 
 const Betting = () => {
 
-
-
+    const one = {
+        n: 'ㄱㄱ',
+        p: 100000,
+        b: 2.75,
+        d: 11,
+        Per: 25
+    }
+    const two = {
+        n: 'ㄴㄴ',
+        p: 45000,
+        b: 1.25,
+        d: 25,
+        Per: 75
+    }
 
     return (
         <S.Container>
@@ -21,8 +33,8 @@ const Betting = () => {
                     </S.BettingSmallTitle>
                 </S.BettingTitle>
                 <S.BettingWrapper>
-                    <BettingInfo/>
-                    <BettingInfo right={true}/>
+                    <BettingInfo data={one}/>
+                    <BettingInfo data={two} right={true}/>
                 </S.BettingWrapper>
             </S.BettingContainer>
         </S.Container>

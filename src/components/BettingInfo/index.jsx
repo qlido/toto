@@ -6,18 +6,20 @@ import {realtimeDB} from "../../utils/firebase/init";
 const BettingInfo = (props) => {
 
     const isright = props.right;
+    props = props.data
+    console.log(props)
     return (
         <S.Container>
-            <S.BettingTitle right={isright}> dd </S.BettingTitle>
+            <S.BettingTitle right={isright}> {props.n} </S.BettingTitle>
             <S.InfoContainer right={isright}>
                 <S.StatContainer>
-                    <S.Stat right={isright}><S.StatName right={isright}>판돈</S.StatName>  10000</S.Stat>
-                    <S.Stat right={isright}><S.StatName right={isright}>배당</S.StatName>  10000</S.Stat>
-                    <S.Stat right={isright}><S.StatName right={isright}>동료</S.StatName>  10000</S.Stat>
-                    <S.Stat right={isright}><S.StatName right={isright}>부자</S.StatName>  10000</S.Stat>
+                    <S.Stat right={isright}><S.StatName right={isright}>판돈</S.StatName> {props.p}</S.Stat>
+                    <S.Stat right={isright}><S.StatName right={isright}>배당</S.StatName> {props.b}</S.Stat>
+                    <S.Stat right={isright}><S.StatName right={isright}>동료</S.StatName>  {props.d}</S.Stat>
+                    <S.Stat right={isright}><S.StatName right={isright}>부자</S.StatName> 250000</S.Stat>
                 </S.StatContainer>
                 <S.PercentContainer right={isright}>
-                    <S.Percent >10%</S.Percent>
+                    <S.Percent >{props.Per}%</S.Percent>
                     <S.Graph/>
                 </S.PercentContainer>
             </S.InfoContainer>
